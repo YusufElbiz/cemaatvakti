@@ -1,0 +1,49 @@
+:root {
+  --bg: #f8f4ee;
+  --card: #ffffff;
+  --ink: #1d2a26;
+  --muted: #5c6b66;
+  --green: #0b4d3f;
+  --gold: #b8892f;
+  --line: #e6dccb;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #071f1a;
+    --card: #0d2b24;
+    --ink: #eef3f1;
+    --muted: #a9bbb5;
+    --green: #7fd1b5;
+    --gold: #e0b866;
+    --line: #1f4a3f;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Arabic", sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+.brand { font-weight: 800; font-size: 20px; color: var(--green); text-decoration: none; }
+nav.lang { display: flex; gap: 6px; }
+nav.lang a { padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); text-decoration: none; font-size: 14px; }
+nav.lang a[aria-current="page"] { background: var(--green); border-color: var(--green); color: var(--bg); }
+h1 { font-size: 28px; line-height: 1.25; margin: 24px 0 4px; }
+h2 { font-size: 19px; margin: 32px 0 8px; color: var(--green); }
+.updated { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 4px 20px 16px; }
+ul { padding-inline-start: 22px; }
+li { margin: 4px 0; }
+a { color: var(--green); }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: start; vertical-align: top; padding: 8px 6px; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 600; }
+.tablewrap { overflow-x: auto; }
+.links { display: grid; gap: 12px; margin-top: 24px; }
+.links a { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; text-decoration: none; color: var(--ink); font-weight: 600; }
+.links a span { display: block; color: var(--muted); font-weight: 400; font-size: 14px; }
+footer { margin-top: 40px; color: var(--muted); font-size: 14px; }
+[dir="rtl"] body, body[dir="rtl"] { text-align: right; }
