@@ -56,7 +56,8 @@ Contact: <a href="mailto:elbizstudio@gmail.com">elbizstudio@gmail.com</a></p>
 <ul>
 <li><strong>Google Firebase</strong> (accounts and database), with data stored on Google servers in Europe.</li>
 <li><strong>Expo</strong> (notification delivery and app updates): your push token, the notification text and, to refresh the home-screen widget, the group's summary for that day (members' names, icons and prayer marks) are delivered through this service, only to members of that group.</li>
-<li><strong>ezanvakti.emushaf.net</strong> (prayer times based on the Diyanet calendar); only a district number is sent.</li>
+<li><strong>Presidency of Religious Affairs (Diyanet) Awqat Salah service</strong> (official prayer times): the app sends the district number to our own server on Google Cloud (Europe, Belgium); our server passes only the district number to Diyanet and stores the times for everyone. Your name, email or location are not sent to Diyanet.</li>
+<li><strong>ezanvakti.emushaf.net</strong> (fallback, prayer times based on the Diyanet calendar), used if our server is unreachable; only a district number is sent.</li>
 <li><strong>OpenStreetMap-based services</strong> (map tiles and mosque search: OpenStreetMap, Photon/komoot, Overpass servers) and unpkg for the map library.</li>
 <li>If you open a Quran page, the <strong>Quran portal of Türkiye’s Presidency of Religious Affairs (Diyanet)</strong> (kuran.diyanet.gov.tr) opens in your browser. Only the page number is sent there; your read marks stay with us. Diyanet’s own privacy terms apply there.</li>
 <li>If you open directions to a mosque, <strong>Google Maps</strong> opens and Google’s own privacy terms apply.</li>
