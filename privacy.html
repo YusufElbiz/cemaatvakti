@@ -33,7 +33,9 @@ Contact: <a href="mailto:elbizstudio@gmail.com">elbizstudio@gmail.com</a></p>
 <tr><td>Optionally, your average menstruation days, total postnatal days and time pregnant</td><td>Calculating your qada debt correctly. <strong>Only you can see it</strong>; it’s never shared, including with group friends.</td></tr>
 <tr><td>Badge data: your longest five-prayer and Fajr streaks, how many prayers you prayed on time and Friday prayers at a mosque, how many reactions you sent, the weeks you won the crown, the Quran pages you marked as read and how many times you completed it, whether you finished your missed prayers, optionally your “I performed Hajj / Umrah” statement, and whether to show your badges in groups</td><td>Showing the badges you’ve earned to you and (unless you turn it off) your group friends.</td></tr>
 <tr><td>Group data: group name, icon, invite code, members, the preset reactions you send (e.g. “May Allah accept it”), and khatms you start or are given (khatm name, which juz or pages went to whom, accept/decline status and the page numbers marked as read)</td><td>Making groups work.</td></tr>
-<tr><td>Push notification token and notification preferences</td><td>Delivering your friends’ reactions and reminders as notifications.</td></tr>
+<tr><td>Push notification token and notification preferences. The token is stored only in your own profile; your group friends cannot see it.</td><td>Delivering your friends’ prayer, reaction and khatm notifications. Notifications are sent only by our server.</td></tr>
+<tr><td>Your consent record: the date you consented and the version of the text</td><td>Being able to show that we obtained your consent.</td></tr>
+<tr><td>Reports and blocking: the person and group you report, the reason and time; the list of people you block</td><td>Reviewing inappropriate content; hiding a blocked person’s reactions and stopping notifications between you.</td></tr>
 </table></div>
 <p><strong>Special category data:</strong> Prayer records, the mosques you prayed at and your Hajj/Umrah statement may reveal religious belief; menstruation, postnatal and pregnancy details are health data. They are processed <strong>only with your explicit consent</strong>. You can withdraw consent at any time by deleting your account.</p>
 
@@ -56,6 +58,7 @@ Contact: <a href="mailto:elbizstudio@gmail.com">elbizstudio@gmail.com</a></p>
 <ul>
 <li><strong>Google Firebase</strong> (accounts and database), with data stored on Google servers in Europe.</li>
 <li><strong>Expo</strong> (notification delivery and app updates): your push token, the notification text and, to refresh the home-screen widget, the group's summary for that day (members' names, icons and prayer marks) are delivered through this service, only to members of that group.</li>
+<li><strong>Google Cloud Functions</strong> (Europe, Belgium): our own server. It sends group notifications and for this reads the names, icons, that day’s prayer marks and push tokens of that group’s members. It also fetches the Diyanet prayer times.</li>
 <li><strong>Presidency of Religious Affairs (Diyanet) Awqat Salah service</strong> (official prayer times): the app sends the district number to our own server on Google Cloud (Europe, Belgium); our server passes only the district number to Diyanet and stores the times for everyone. Your name, email or location are not sent to Diyanet.</li>
 <li><strong>ezanvakti.emushaf.net</strong> (fallback, prayer times based on the Diyanet calendar), used if our server is unreachable; only a district number is sent.</li>
 <li><strong>OpenStreetMap-based services</strong> (map tiles and mosque search: OpenStreetMap, Photon/komoot, Overpass servers) and unpkg for the map library.</li>
@@ -79,7 +82,7 @@ Contact: <a href="mailto:elbizstudio@gmail.com">elbizstudio@gmail.com</a></p>
 <p>The App is not directed at children under 13. If you are under 18, use it with your parent’s or guardian’s knowledge and permission.</p>
 
 <h2>9. Security</h2>
-<p>Data is sent over encrypted connections (HTTPS). Database rules ensure people can change only their own data and see only groups they belong to.</p>
+<p>Data is sent over encrypted connections (HTTPS). Database rules ensure people can change only their own data and see only groups they belong to. Notifications are sent only from our server; the event is verified on the server and the text is built from the real records. If you see an inappropriate name, icon or notification you can report and block the person in the app; reports are reviewed within 24 hours. Report records are deleted after review.</p>
 
 <h2>10. Your rights</h2>
 <p>You can ask whether your data is processed, request information, correction or deletion, learn who it was shared with, object, and claim compensation. Write to <a href="mailto:elbizstudio@gmail.com">elbizstudio@gmail.com</a>; we reply within 30 days. You may also complain to Türkiye’s Personal Data Protection Board.</p>

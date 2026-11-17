@@ -33,7 +33,9 @@
 <tr><td>İsteğe bağlı olarak girdiğin ortalama hayız günü, toplam lohusalık günü ve hamilelik süresi</td><td>Kaza borcunu doğru hesaplamak. <strong>Yalnızca sen görürsün</strong>; grup arkadaşların dahil kimseyle paylaşılmaz.</td></tr>
 <tr><td>Rozet bilgileri: en uzun beş vakit ve sabah namazı serin, vaktinde kıldığın vakit ve camide kıldığın cuma sayısı, gönderdiğin tepki sayısı, taç kazandığın haftalar, Kur'an-ı Kerim'den okundu diye işaretlediğin sayfalar ve tamamladığın hatim sayısı, kaza borcunu bitirip bitirmediğin, isteğe bağlı olarak “Hacca gittim / Umreye gittim” beyanın, rozetlerini gruplarda gösterme tercihin</td><td>Kazandığın rozetleri sana ve (kapatmadıysan) grup arkadaşlarına göstermek.</td></tr>
 <tr><td>Grup bilgileri: grup adı, simgesi, davet kodu, üyeler, gönderdiğin hazır tepkiler (ör. “Allah kabul etsin”), açtığın ya da sana verilen hatimler (hatmin adı, kime hangi cüz ya da sayfaların verildiği, kabul/ret durumu ve okundu diye işaretlenen sayfa numaraları)</td><td>Grup özelliğinin çalışması.</td></tr>
-<tr><td>Bildirim anahtarı (push token) ve bildirim tercihlerin</td><td>Grup arkadaşlarının tepkilerini ve hatırlatmaları sana bildirim olarak iletmek.</td></tr>
+<tr><td>Bildirim anahtarı (push token) ve bildirim tercihlerin. Anahtar yalnızca kendi profilinde durur; grup arkadaşların göremez.</td><td>Grup arkadaşlarının namaz, tepki ve hatim bildirimlerini sana iletmek. Bildirimleri yalnızca sunucumuz gönderir.</td></tr>
+<tr><td>Açık rıza kaydın: onay verdiğin tarih ve metnin sürümü</td><td>Rızanı aldığımızı gösterebilmek (KVKK m. 5 ve 6).</td></tr>
+<tr><td>Şikayet ve engelleme: şikayet ettiğin kişi, grup, seçtiğin sebep ve zaman; engellediğin kişilerin listesi</td><td>Uygunsuz içeriği incelemek; engellediğin kişinin tepkilerini sana göstermemek ve aranızda bildirim gitmemesini sağlamak.</td></tr>
 </table></div>
 <p><strong>Özel nitelikli veri:</strong> Namaz kayıtların, kıldığın camiler ve hac/umre beyanın dini inancına; hayız, lohusalık ve hamilelik bilgilerin sağlığına ilişkin bilgi sayılabilir. Bu veriler KVKK’ya göre özel nitelikli kişisel veridir ve <strong>yalnızca açık rızan</strong> ile işlenir. Rızanı istediğin zaman hesabını silerek geri alabilirsin.</p>
 
@@ -56,6 +58,7 @@
 <ul>
 <li><strong>Google Firebase</strong> (hesap ve veritabanı): Verilerin Google’ın Avrupa’daki sunucularında saklanır.</li>
 <li><strong>Expo</strong> (bildirim iletimi ve uygulama güncellemeleri): Bildirim anahtarın, bildirim metni ve ana ekran widget'ını güncellemek için grubun o günkü özeti (üyelerin adı, simgesi ve vakit işaretleri) bu servis üzerinden yalnızca o grubun üyelerine iletilir.</li>
+<li><strong>Google Cloud Functions</strong> (Avrupa, Belçika): Kendi sunucumuz. Grup bildirimlerini gönderir; bunun için o gruptaki üyelerin adını, simgesini, o günkü vakit işaretlerini ve bildirim anahtarlarını okur. Diyanet namaz vakitlerini de buradan alır.</li>
 <li><strong>Diyanet İşleri Başkanlığı Awqat Salah servisi</strong> (resmi namaz vakitleri): Uygulama ilçe numarasını Google Cloud'da (Avrupa, Belçika) çalışan kendi sunucumuza gönderir; sunucumuz Diyanet'e yalnızca ilçe numarasını iletir ve vakitleri herkes için saklar. Senin adın, e-postan ya da konumun Diyanet'e gönderilmez.</li>
 <li><strong>ezanvakti.emushaf.net</strong> (yedek kaynak, Diyanet takvimine göre namaz vakitleri): Sunucumuza ulaşılamazsa kullanılır; yalnızca ilçe numarası gönderilir.</li>
 <li><strong>OpenStreetMap tabanlı harita servisleri</strong> (harita görüntüleri, cami arama: OpenStreetMap, Photon/komoot, Overpass sunucuları) ve harita kütüphanesi için unpkg.</li>
@@ -79,7 +82,7 @@
 <p>Uygulama 13 yaşından küçük çocuklara yönelik değildir. 18 yaşından küçüksen uygulamayı velinin bilgisi ve izniyle kullanmalısın.</p>
 
 <h2>9. Güvenlik</h2>
-<p>Verilerin şifreli bağlantı (HTTPS) ile iletilir. Veritabanı erişim kuralları, kişilerin yalnızca kendi verilerini değiştirebilmesini ve yalnızca üyesi oldukları grupları görebilmesini sağlar.</p>
+<p>Verilerin şifreli bağlantı (HTTPS) ile iletilir. Veritabanı erişim kuralları, kişilerin yalnızca kendi verilerini değiştirebilmesini ve yalnızca üyesi oldukları grupları görebilmesini sağlar. Bildirimler yalnızca sunucumuzdan gönderilir; olay sunucuda doğrulanır ve bildirim metni gerçek kayıtlardan oluşturulur. Uygunsuz bir ad, simge ya da bildirim görürsen kişiyi uygulamadan şikayet edebilir ve engelleyebilirsin; şikayetler en geç 24 saat içinde incelenir. Şikayet kayıtları inceleme bitince silinir.</p>
 
 <h2>10. Hakların (KVKK m. 11)</h2>
 <p>Verilerinin işlenip işlenmediğini öğrenme, bilgi isteme, düzeltilmesini veya silinmesini isteme, aktarıldığı kişileri öğrenme, itiraz etme ve zararın giderilmesini isteme haklarına sahipsin. Başvurunu <a href="mailto:elbizstudio@gmail.com">elbizstudio@gmail.com</a> adresine gönderebilirsin; en geç 30 gün içinde yanıtlarız. Yanıtımızdan memnun kalmazsan Kişisel Verileri Koruma Kurulu’na şikâyette bulunabilirsin.</p>
