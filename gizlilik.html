@@ -44,8 +44,8 @@
 <ul>
 <li>Konumun yalnızca <strong>senin telefonunda</strong> kullanılır ve saklanır: namaz vakitlerini ve kıble yönünü hesaplamak için. Sunucumuza kaydedilmez.</li>
 <li>Namaz vakitlerini almak için sunucuya konumun değil, yalnızca en yakın <strong>ilçenin numarası</strong> gönderilir.</li>
-<li>“Yakındaki camiler” özelliğini kullandığında, camileri bulabilmek için o anki yaklaşık konumun harita servislerine (aşağıda listelenen OpenStreetMap tabanlı servisler) gönderilir. Bu servisler konumunu bizimle ilişkilendirmez.</li>
-<li>Haritada isimle cami aradığında yazdığın arama metni de bu harita servisine gönderilir.</li>
+<li>“Yakındaki camiler” özelliğini kullandığında telefonun harita servislerine doğrudan bağlanmaz: arama, Google Cloud’da (Avrupa, Belçika) çalışan kendi sunucumuz üzerinden yapılır. Konumun telefonda yaklaşık 1 km’ye yuvarlanır; harita servislerine yalnızca bu yuvarlatılmış konum gider. IP adresin, adın, hesabın ya da tam konumun gitmez; giden bilgi sana bağlanamaz.</li>
+<li>Haritada isimle cami ya da semt aradığında yazdığın arama metni de yalnızca sunucumuz üzerinden, kimliğin olmadan bu servislere iletilir. Harita görüntüleri de sunucumuzdan gelir; harita kütüphanesi uygulamanın içindedir.</li>
 <li>Konum izni vermek zorunda değilsin; şehrini listeden de seçebilirsin.</li>
 </ul>
 
@@ -62,7 +62,7 @@
 <li><strong>Google Cloud Functions</strong> (Avrupa, Belçika): Kendi sunucumuz. Grup bildirimlerini gönderir; bunun için o gruptaki üyelerin adını, simgesini, o günkü vakit işaretlerini ve bildirim anahtarlarını okur. Diyanet namaz vakitlerini de buradan alır.</li>
 <li><strong>Diyanet İşleri Başkanlığı Awqat Salah servisi</strong> (resmi namaz vakitleri): Uygulama ilçe numarasını Google Cloud'da (Avrupa, Belçika) çalışan kendi sunucumuza gönderir; sunucumuz Diyanet'e yalnızca ilçe numarasını iletir ve vakitleri herkes için saklar. Senin adın, e-postan ya da konumun Diyanet'e gönderilmez.</li>
 <li><strong>ezanvakti.emushaf.net</strong> (yedek kaynak, Diyanet takvimine göre namaz vakitleri): Sunucumuza ulaşılamazsa kullanılır; yalnızca ilçe numarası gönderilir.</li>
-<li><strong>OpenStreetMap tabanlı harita servisleri</strong> (harita görüntüleri, cami arama: OpenStreetMap, Photon/komoot, Overpass sunucuları) ve harita kütüphanesi için unpkg.</li>
+<li><strong>OpenStreetMap tabanlı harita servisleri</strong> (harita görüntüleri ve cami arama: OpenStreetMap, Photon/komoot, Overpass sunucuları, Avrupa): Yalnızca kendi sunucumuz bağlanır; telefonun bu servislere bağlanmaz. Gönderilen bilgi kişiye bağlanamaz (yuvarlatılmış konum, arama metni, harita kutucuğu).</li>
 <li>Kur'an-ı Kerim'de bir sayfa açarsan <strong>Diyanet İşleri Başkanlığı Kur'an portalı</strong> (kuran.diyanet.gov.tr) tarayıcıda açılır. Ona yalnızca sayfa numarası gider; okundu işaretlerin bizde kalır. Orada Diyanet'in kendi gizlilik kuralları geçerlidir.</li>
 <li>Bir caminin yol tarifini açarsan <strong>Google Haritalar</strong> açılır; orada Google’ın kendi gizlilik kuralları geçerlidir.</li>
 </ul>
