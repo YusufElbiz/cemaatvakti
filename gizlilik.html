@@ -57,7 +57,7 @@
 
 <h2>5. Kullandığımız hizmet sağlayıcılar</h2>
 <ul>
-<li><strong>Google Firebase</strong> (hesap ve veritabanı): Verilerin Google’ın Avrupa’daki sunucularında saklanır.</li>
+<li><strong>Google Firebase</strong> (hesap ve veritabanı): Namaz, oruç, grup ve profil verilerin Google’ın Avrupa’daki sunucularında saklanır. E-posta adresin ve giriş bilgilerin (Firebase Authentication) Google’ın ABD’deki sunucularında işlenir.</li>
 <li><strong>Expo</strong> (bildirim iletimi ve uygulama güncellemeleri): Bildirim anahtarın, bildirim metni ve ana ekran widget'ını güncellemek için grubun o günkü özeti (üyelerin adı, simgesi ve vakit işaretleri) bu servis üzerinden yalnızca o grubun üyelerine iletilir.</li>
 <li><strong>Google Cloud Functions</strong> (Avrupa, Belçika): Kendi sunucumuz. Grup bildirimlerini gönderir; bunun için o gruptaki üyelerin adını, simgesini, o günkü vakit işaretlerini ve bildirim anahtarlarını okur. Diyanet namaz vakitlerini de buradan alır.</li>
 <li><strong>Diyanet İşleri Başkanlığı Awqat Salah servisi</strong> (resmi namaz vakitleri): Uygulama ilçe numarasını Google Cloud'da (Avrupa, Belçika) çalışan kendi sunucumuza gönderir; sunucumuz Diyanet'e yalnızca ilçe numarasını iletir ve vakitleri herkes için saklar. Senin adın, e-postan ya da konumun Diyanet'e gönderilmez.</li>

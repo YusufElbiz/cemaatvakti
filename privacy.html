@@ -57,7 +57,7 @@ Contact: <a href="mailto:elbizstudio@gmail.com">elbizstudio@gmail.com</a></p>
 
 <h2>5. Service providers</h2>
 <ul>
-<li><strong>Google Firebase</strong> (accounts and database), with data stored on Google servers in Europe.</li>
+<li><strong>Google Firebase</strong> (accounts and database): your prayer, fasting, group and profile data are stored on Google servers in Europe. Your email address and sign-in data (Firebase Authentication) are processed on Google servers in the United States.</li>
 <li><strong>Expo</strong> (notification delivery and app updates): your push token, the notification text and, to refresh the home-screen widget, the group's summary for that day (members' names, icons and prayer marks) are delivered through this service, only to members of that group.</li>
 <li><strong>Google Cloud Functions</strong> (Europe, Belgium): our own server. It sends group notifications and for this reads the names, icons, that day’s prayer marks and push tokens of that group’s members. It also fetches the Diyanet prayer times.</li>
 <li><strong>Presidency of Religious Affairs (Diyanet) Awqat Salah service</strong> (official prayer times): the app sends the district number to our own server on Google Cloud (Europe, Belgium); our server passes only the district number to Diyanet and stores the times for everyone. Your name, email or location are not sent to Diyanet.</li>
